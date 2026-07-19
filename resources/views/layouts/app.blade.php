@@ -10,38 +10,126 @@
     <title>GreenConnect</title>
 
     <!-- Fonts -->
-        <link rel="icon" href="/images/greenconnect.jpg" type="image/jpeg">
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="icon" href="/images/greenconnect.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-
     <!-- Styles -->
-<style>
-    .navbar {
-        background: linear-gradient(to bottom, #06644f, #010c08);
-    }
+    <style>
+        body {
+            background-color: #0b111e;
+            color: #f3f4f6;
+            font-family: 'Outfit', sans-serif;
+            background-image: radial-gradient(circle at 10% 20%, rgba(6, 100, 79, 0.08) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
 
-    .navbar .navbar-brand,
-    .navbar .navbar-nav .nav-link {
-        color: white;
-    }
-.nav-profile-img {
-   width:30px;
-    border-radius: 50%;
-}
+        .navbar {
+            background: rgba(11, 17, 30, 0.8) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.15) !important;
+            padding: 16px 0;
+        }
 
-.profile-display img {
-    max-width: 100px;
-}
+        .navbar .navbar-brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
+        .navbar .navbar-nav .nav-link {
+            color: #9ca3af !important;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
 
+        .navbar .navbar-nav .nav-link:hover {
+            color: #10b981 !important;
+        }
 
+        .nav-profile-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #10b981;
+            margin-left: 8px;
+        }
 
-</style>
+        .card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(16, 185, 129, 0.35);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.08);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+            border: none !important;
+            border-radius: 10px !important;
+            font-weight: 600 !important;
+            padding: 10px 20px !important;
+            transition: all 0.2s ease !important;
+            color: white !important;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2) !important;
+        }
+
+        .btn-primary:disabled {
+            background: rgba(16, 185, 129, 0.2) !important;
+            color: rgba(255, 255, 255, 0.4) !important;
+            cursor: not-allowed;
+        }
+
+        .form-control {
+            background-color: rgba(31, 41, 55, 0.5) !important;
+            border: 1px solid rgba(16, 185, 129, 0.2) !important;
+            color: #f3f4f6 !important;
+            border-radius: 10px !important;
+            padding: 12px 16px !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .form-control:focus {
+            background-color: rgba(31, 41, 55, 0.8) !important;
+            border-color: #10b981 !important;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+        }
+
+        .user-info {
+            padding: 14px 20px;
+            background: rgba(31, 41, 55, 0.4);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .user-info p {
+            font-weight: 600;
+            color: #e5e7eb;
+        }
+    </style>
 
 
 
