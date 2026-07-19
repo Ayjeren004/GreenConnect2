@@ -42,7 +42,7 @@
 <div class="container">
     <div class="brand-hero">
         <h1 class="brand-name">GreenConnect</h1>
-        <p class="hero-subtitle">A modern, secure social network built to connect developers, exchange digital gifts, and share local posts seamlessly.</p>
+        <p class="hero-subtitle">A modern, secure social network built to connect eco-conscious advocates, exchange digital gifts, and share sustainability ideas seamlessly.</p>
         
         <div class="mt-4">
             @guest
@@ -70,8 +70,8 @@
                     <div class="text-success mb-3" style="font-size: 32px;">
                         <i class="fas fa-network-wired"></i>
                     </div>
-                    <h5 class="font-weight-bold text-white mb-2">Developer Network</h5>
-                    <p class="text-secondary small mb-0">Follow other engineers, exchange preferences, and expand your social circles.</p>
+                    <h5 class="font-weight-bold text-white mb-2">Eco-Conscious Network</h5>
+                    <p class="text-secondary small mb-0">Follow other green advocates, share ideas, and expand your sustainability community circles.</p>
                 </div>
             </div>
         </div>
@@ -94,8 +94,8 @@
                     <div class="text-success mb-3" style="font-size: 32px;">
                         <i class="fas fa-gift"></i>
                     </div>
-                    <h5 class="font-weight-bold text-white mb-2">Gift Trading</h5>
-                    <p class="text-secondary small mb-0">Send and receive digital gift cards and track transactions in real-time.</p>
+                    <h5 class="font-weight-bold text-white mb-2">Eco-Friendly Gifts</h5>
+                    <p class="text-secondary small mb-0">Send and receive digital gift certificates and track exchanges in real-time.</p>
                 </div>
             </div>
         </div>

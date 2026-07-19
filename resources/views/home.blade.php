@@ -8,7 +8,7 @@
             <div class="p-5 mb-4 rounded-3 card border-0" style="background: linear-gradient(135deg, rgba(6, 100, 79, 0.4) 0%, rgba(17, 24, 39, 0.8) 100%);">
                 <div class="container-fluid py-2">
                     <h1 class="display-5 fw-bold text-white font-weight-bold">Welcome back, {{ auth()->user()->first_name }}!</h1>
-                    <p class="col-md-8 fs-4 text-secondary mt-2">Manage your connection feed, share posts, view gifts, and grow your networking space inside the GreenConnect dashboard.</p>
+                    <p class="col-md-8 fs-4 text-secondary mt-2">Manage your eco-friendly posts, connect with fellow green advocates, trade digital gift certificates, and track community milestones.</p>
                     <div class="mt-4">
                         <a href="{{ route('post.index') }}" class="btn btn-primary btn-lg px-4 me-md-2 mr-3">
                             <i class="fas fa-newspaper mr-2"></i> View Feed
