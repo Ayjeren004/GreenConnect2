@@ -1,5 +1,7 @@
 # Stage 1: Build PHP dependencies
-FROM composer:latest as build-php
+FROM php:8.2-cli as build-php
+RUN apt-get update && apt-get install -y git unzip zip
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 COPY . .
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
