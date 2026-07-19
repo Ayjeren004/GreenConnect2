@@ -14,12 +14,19 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 COPY . .
 
+# Setup environment
+RUN cp .env.example .env
+
 # Install Laravel dependencies
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+# Generate app key for production
+RUN php artisan key:generate
 
 # Set up SQLite database
 RUN mkdir -p database
 RUN touch database/database.sqlite
+RUN sed -i 's/DB_CONNECTION=mysql/DB_CONNECTION=sqlite/g' .env
 RUN php artisan migrate --force
 
 # Render assigns a dynamic port via the PORT environment variable
