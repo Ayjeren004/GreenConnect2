@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\PublicController;
+use App\Http\Controllers\API\PublicController;
 
 
 
