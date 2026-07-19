@@ -22,10 +22,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     sqlite3 \
     libsqlite3-dev \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    && docker-php-ext-install pdo pdo_sqlite zip mbstring exif pcntl bcmath gd
+    && docker-php-ext-install pdo pdo_sqlite zip
 
 WORKDIR /app
 
