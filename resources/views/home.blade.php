@@ -68,8 +68,8 @@
                             <div class="text-success mb-3">
                                 <i class="fas fa-gift fa-2x"></i>
                             </div>
-                            <h3 class="font-weight-bold text-dark mb-1">{{ auth()->user()->receivedGifts()->count() + auth()->user()->sentGifts()->count() }}</h3>
-                            <p class="text-muted mb-0">Gifts Traded</p>
+                            <h3 class="font-weight-bold text-dark mb-1">{{ auth()->user()->gifts()->count() }}</h3>
+                            <p class="text-muted mb-0">Eco Gifts</p>
                         </div>
                     </div>
                 </div>

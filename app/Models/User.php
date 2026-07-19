@@ -66,17 +66,13 @@ public function likes():BelongsToMany
     return $this->belongstoMany(Post::class,'post_likes', 'user_id','post_id' );
 }
 
-public function comments()
-{
-    return $this->hasMany(Comment::class);
-}
- public function sentGifts()
+    public function comments()
     {
-        return $this->hasMany(Gift::class, 'sender_id');
+        return $this->hasMany(Comment::class);
     }
 
-    public function receivedGifts()
+    public function gifts(): HasMany
     {
-        return $this->hasMany(Gift::class, 'receiver_id');
+        return $this->hasMany(Gift::class);
     }
 }
