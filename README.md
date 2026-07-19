@@ -1,56 +1,32 @@
-# GreenConnect
+# GreenConnect2
 
-GreenConnect is a premium, responsive social network built using Laravel 11 for eco-conscious advocates. It features an interactive posts feed to share sustainability ideas, mutual follow connections between green users, user profile managers, and a digital gift card trading center.
+GreenConnect2 is an eco-conscious social networking and gamified impact tracking platform built with Laravel 11. It features a modern Glassmorphism UI, a real-time Eco-Impact dashboard, and an interactive Eco-Gift store.
 
-## Live Local Server
-* Local Host: **`http://127.0.0.1:8001`**
+## Features
 
-## Key Features
-* **Sustainability Feed:** Share text posts and image attachments on eco-tips, recycling initiatives, or carbon reduction strategies. Users can comment on and like posts.
-* **Mutual Connections:** A user follow/unfollow mapping engine to build green community circles.
-* **Gift Exchange Center:** A trading portal allowing users to send and receive digital gift cards with recorded sender/receiver history.
-* **Sanctum API Integrations:** Secured token authentication `/api/login/token` for managing posts and comments programmatically.
-* **Premium Theme:** Styled with a responsive, dark-themed glassmorphism interface, custom CSS animations, and Google Fonts typography.
+- User Authentication & Profiles: Secure user registration and profile management.
+- Eco-Impact Dashboard: Gamified tracking system where users earn points for eco-friendly actions.
+- Eco-Gift Store: Users can send and receive virtual gifts such as "Plant a Tree" or "Ocean Cleanup", which contribute to their overall impact score.
+- Glassmorphism UI: A clean, modern, frosted-glass design aesthetic.
 
-## Technical Stack
-* **Backend:** PHP 8.2+, Laravel 11, Sanctum
-* **Database:** SQLite (default connection)
-* **Frontend:** Blade Templates, Bootstrap CSS, custom Vanilla CSS variables, and Vite compilation
+## Technology Stack
 
-## Local Installation & Run Setup
+- Backend: Laravel 11 (PHP 8.4)
+- Database: SQLite
+- Frontend: Blade Templates, Vanilla CSS, Vite
+- Deployment: Docker (Multi-stage build)
 
-### 1. Clone the Repository
-```bash
-git clone git@github.com:Ayjeren004/GreenConnect2.git
-cd GreenConnect2
-```
+## Local Development
 
-### 2. Configure Environment Options
-Copy the template configuration file to configure options (SQLite is preconfigured as the default connection):
-```bash
-cp .env.example .env
-```
+1. Clone the repository.
+2. Install PHP dependencies: `composer install`
+3. Install Node dependencies: `npm install`
+4. Copy the environment file: `cp .env.example .env`
+5. Generate the application key: `php artisan key:generate`
+6. Run database migrations: `php artisan migrate`
+7. Start the local development server: `php artisan serve`
+8. Compile frontend assets: `npm run dev`
 
-### 3. Install Dependencies
-Install composer requirements (use ignore-platform-reqs if running on PHP 8.4+):
-```bash
-composer install --ignore-platform-reqs
-npm install
-```
+## Deployment
 
-### 4. Build Database Schema and Seed Data
-Create the local SQLite database file, migrate table schemas, and seed actors, movies, gifts, and posts records:
-```bash
-php artisan key:generate
-touch database/database.sqlite
-php artisan migrate
-php artisan db:seed
-```
-
-### 5. Compile Assets and Launch
-Compile JavaScript and CSS styles and start the local development server:
-```bash
-npm run build
-php artisan serve --port=8001
-```
-Once started, navigate to **`http://127.0.0.1:8001`** in your browser.
+This application is containerized using Docker and is configured for deployment on PaaS platforms like Render. The provided Dockerfile utilizes a multi-stage build process to compile Node assets and PHP dependencies into a final, lightweight production image.
