@@ -6,17 +6,10 @@ WORKDIR /app
 COPY . .
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
-# Stage 2: Build Node.js assets
-FROM node:20 as build-node
-WORKDIR /app
-COPY . .
-RUN npm install
-RUN npm run build
-
-# Stage 3: Setup Production Environment
+# Stage 2: Setup Production Environment
 FROM php:8.2-cli
 
-# Install system dependencies and PHP extensions
+# Install sqlite3 and zip requirements
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     unzip \
@@ -26,12 +19,11 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# Copy application files
+# Copy application files (including public/build which is now committed)
 COPY . .
 
-# Copy built dependencies and assets from previous stages
+# Copy built vendor from composer stage
 COPY --from=build-php /app/vendor /app/vendor
-COPY --from=build-node /app/public/build /app/public/build
 
 # Setup environment
 RUN cp .env.example .env
