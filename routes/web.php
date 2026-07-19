@@ -37,5 +37,6 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/users/search', 'App\Http\Controllers\UserController@search')->name('user.search');
     Route::get('/users/{user}', 'App\Http\Controllers\UserController@profile')->name('user.profile');
     Route::get('/gifts', 'App\Http\Controllers\GiftController@index')->name('gifts.index');
+    Route::post('/gifts', 'App\Http\Controllers\GiftController@store')->name('gifts.store');
 });
 require __DIR__.'/auth.php';

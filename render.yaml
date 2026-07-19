@@ -1,0 +1,24 @@
+databases:
+  - name: greenconnect-db
+    databaseName: laravel
+    user: laravel
+    plan: free
+
+services:
+  - type: web
+    name: greenconnect2
+    env: php
+    plan: free
+    buildCommand: "composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader && php artisan migrate --force"
+    startCommand: "php -S 0.0.0.0:$PORT -t public"
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: /opt/render/project/src/database/database.sqlite
+      - key: LOG_CHANNEL
+        value: stderr
